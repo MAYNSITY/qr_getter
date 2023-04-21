@@ -64,12 +64,12 @@ class GenerateQRCodeState extends State<GenerateQRCode> {
       body: Container(
         alignment: Alignment.center,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           // crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              height: 80,
-            ),
+            SizedBox(),
             GestureDetector(
+              behavior: HitTestBehavior.translucent,
               onTap: getdata,
               // onTap: () {
               //   setState(
@@ -95,9 +95,7 @@ class GenerateQRCodeState extends State<GenerateQRCode> {
                 ),
               ),
             ),
-            SizedBox(
-              height: 140,
-            ),
+            SizedBox(),
             Visibility(
               visible: display,
               child: QrImage(
@@ -118,7 +116,7 @@ class GenerateQRCodeState extends State<GenerateQRCode> {
   }
 
   void getdata() async {
-    print('1 call');
+    // print('1 call');
     const url = 'http://13.235.16.14/back/user-api/v0/test-raw-id/';
     final uri = Uri.parse(url);
     final response = await http.get(uri);
@@ -128,7 +126,7 @@ class GenerateQRCodeState extends State<GenerateQRCode> {
       data = json['raw_id'];
     });
     display = true;
-    print(data);
+    // print(data);
   }
 
   // getData() {

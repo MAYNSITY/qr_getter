@@ -4,6 +4,8 @@
         android:label="qr_getter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- Required to fetch data from the internet. -->
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -31,4 +33,5 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+<uses-permission android:name="android.permission.INTERNET" />
 </manifest>
